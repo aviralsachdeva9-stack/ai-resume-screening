@@ -1,0 +1,6 @@
+PyPDF2
+requests
+PyJWT
+Flask
+Flask-Cors
+Werkzeug

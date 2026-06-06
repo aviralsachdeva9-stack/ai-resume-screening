@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "AI Resume Screening ATS Portal"
+version = "1.0.0"
+id = "artifacts/ats-portal"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21863
+
+[services.development]
+run = "pnpm --filter @workspace/ats-portal run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ats-portal", "run", "build" ]
+publicDir = "artifacts/ats-portal/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21863"
+BASE_PATH = "/"
