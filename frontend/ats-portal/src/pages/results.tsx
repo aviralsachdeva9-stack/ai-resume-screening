@@ -250,7 +250,7 @@ export default function ResultsPage() {
     setIsDownloading(true);
     try {
       const token = localStorage.getItem("ats_token") ?? "";
-      const apiUrl = import.meta.env.VITE_API_URL ?? "";
+      const apiUrl = "http://13.127.149.197:5000";
       const res = await fetch(`${apiUrl}/export`, {
         headers: { Authorization: `Bearer ${token}` },
       });

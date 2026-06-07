@@ -190,7 +190,7 @@ export default function UploadPage() {
 
     try {
       const token = localStorage.getItem("ats_token") ?? "";
-      const apiUrl = import.meta.env.VITE_API_URL ?? "";
+      const apiUrl = "http://13.127.149.197:5000";
       const formData = new FormData();
       formData.append("jd", jd.trim());
       files.forEach(f => formData.append("resumes", f));

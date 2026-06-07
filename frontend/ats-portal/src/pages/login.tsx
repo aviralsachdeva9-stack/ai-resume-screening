@@ -31,7 +31,7 @@ export default function LoginPage() {
     setIsLoading(true);
     setError("");
     try {
-      const apiUrl = import.meta.env.VITE_API_URL ?? "";
+      const apiUrl = "http://13.127.149.197:5000";
       const res = await fetch(`${apiUrl}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
